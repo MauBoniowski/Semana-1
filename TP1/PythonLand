@@ -1,0 +1,47 @@
+# Ingreso de datos secundarios: 
+nombre = input("Ingrese su nombre: ")
+edad = int(input("Ingrese su edad: "))
+cantidad = int(input("Ingrese la cantidad de atracciones a las que desea subir: "))
+# Precios de las atracciones:
+montaña_rusa = 1500
+casa_terror = 1200
+carrusel = 800
+
+total = 0
+i = 1 #Contador de atracciones
+
+print("Atracciones disponibles: ")
+print("1. Montaña Rusa: $1500")
+print("2. Casa del Terror: $1200")
+print("3. Carrusel: $800")
+
+while i <= cantidad:
+    eleccion = input(f"Elija la atraccion {i}: ")
+    if eleccion == "Montaña Rusa":
+        if edad >= 12:
+            print("Cumple con los requisitos para ingresar.")
+            total += montaña_rusa
+        else: 
+            print("No cumple con los requisitos para ingresar.")
+    
+    elif eleccion == "Casa del Terror":
+        if edad >= 6:
+            print("Cumple con los requisitos para ingresar.")
+            total += casa_terror
+        else:
+            print("No cumple con los requisitos para ingresar.")
+
+    elif eleccion == "Carrusel":
+        print("Puede ingresar.")
+        total += carrusel
+    else:
+        print("Atraccion no valida.")
+
+    i += 1
+
+# Resumen:
+print(f"Visitante: {nombre}.")
+print(f"Edad: {edad}.")
+print(f"Atracciones elegidas: {cantidad}")
+
+print(f"Total a pagar: ${total}.")
